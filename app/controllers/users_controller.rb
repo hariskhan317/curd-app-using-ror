@@ -8,11 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user.param)
+    @user = User.create(user_params)
     if @user.save
       redirect_to root_path()
     else
       render :new, status: :unprocessabl
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:firstName, :lastName, :phone, :age, :description, :address, :salary, :occupation, :birthdate)
   end
 end

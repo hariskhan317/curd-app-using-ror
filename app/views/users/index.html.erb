@@ -4,3 +4,30 @@ hey all users
 <% @users.each do |user| %>
     <%= user.firstName%>
 <%end%>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Salary</th>
+    <th>Occupation</th>
+    <th>Address</th>
+    <th>BirthDate</th>
+    <th>Description</th>
+  </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td> <%= user.firstName%> <%= user.lastName %>  </td>
+            <td> <%= user.phone %> </td>
+            <td> <%= user.age %> </td>
+            <td> <%= user.gender %> </td>
+            <td> <%= user.salary %> </td>
+            <td> <%= user.occupation %> </td>
+            <td> <%= user.address %> </td>
+            <td> <%= user.birthdate %> </td>
+            <td> <%= user.description %> </td>
+        </tr>
+    <% end %>
+</table>
