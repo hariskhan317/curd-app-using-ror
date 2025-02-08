@@ -19,7 +19,8 @@ create new user
     </div>
     <div>
         <label>Gender</label>
-        <%= f.text_field :gender %>
+        <%= f.radio_button :gender, "Male" %> Male
+        <%= f.radio_button :gender, "Female" %> Female
     </div>
     <div>
         <label>Description</label>

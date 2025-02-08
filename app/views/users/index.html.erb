@@ -1,9 +1,6 @@
 hey all users
 
 <%= link_to 'Create a new user', new_user_path() %>
-<% @users.each do |user| %>
-    <%= user.firstName%>
-<%end%>
 
 <table>
   <tr>
@@ -16,6 +13,7 @@ hey all users
     <th>Address</th>
     <th>BirthDate</th>
     <th>Description</th>
+    <th></th>
   </tr>
     <% @users.each do |user| %>
         <tr>
@@ -28,6 +26,8 @@ hey all users
             <td> <%= user.address %> </td>
             <td> <%= user.birthdate %> </td>
             <td> <%= user.description %> </td>
+            <td> <%= link_to "Delete", delete_user_path(user.id), method: :delete  %> </td>
+            <td> <%= link_to "show user", show_user_path(user.id)  %> </td>
         </tr>
     <% end %>
 </table>
