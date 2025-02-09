@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy] # rubocop:disable Layout/SpaceInsideArrayLiteralBrackets
+  before_action :set_user, only: [:show, :edit, :destroy, :edit_user] # rubocop:disable Layout/SpaceInsideArrayLiteralBrackets
   def index
     @users = User.all
   end
@@ -13,13 +13,25 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path()
     else
-      render :new, status: :unprocessabl
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @user
   end
 
   def destroy
     @user.destroy
     redirect_to root_path, notice: "User deleted successfully."
+  end
+
+  def edit_user
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def show
