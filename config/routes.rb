@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   root "users#index"
   get "user/new", to: "users#new", as: "new_user"
   get "user/:id", to: "users#show", as: "show_user"
+  get "user/edit/:id", to: "users#edit", as: "edit_user"
   get "user/delete/:id", to: "users#destroy", as: "delete_user"
 
   post "user/new", to: "users#create"
+  patch "user/edit/:id", to: "users#edit_user"
   delete "user/delete/:id", to: "users#destroy"
 end
