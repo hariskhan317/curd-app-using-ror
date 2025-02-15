@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+Department.create!(name: "Human Resources")
+Department.create!(name: "Quality Assurance")
+Department.create!(name: "Developers")
+Department.create!(name: "Project Manager")
+
+Country.create!(name: "Usa")
+Country.create!(name: "Pakistan")
+Country.create!(name: "Germany")
+Country.create!(name: "Australia")

@@ -23,10 +23,6 @@ Edit User
         <%= f.radio_button :gender, "Female" %> Female
     </div>
     <div>
-        <label>Description</label>
-        <%= f.rich_text_area :description %>
-    </div>
-    <div>
         <label>Address</label>
         <%= f.text_field :address %>
     </div>
@@ -41,6 +37,18 @@ Edit User
     <div>
         <label>BirthDay</label>
         <%= f.date_field :birthdate %>
+    </div>
+    <div>
+        <label>Country</label>
+        <%= f.select :country_id, options_from_collection_for_select(select_country, 'id', 'name', f.object.country_id), { include_blank: "Select Country" } %>
+    </div>
+    <div>
+        <label>Department</label>
+        <%= f.select :department_id, options_from_collection_for_select(select_department, 'id', 'name', f.object.department_id), { include_blank: "Select Country" } %>
+    </div>
+    <div>
+        <label>Description</label>
+        <%= f.rich_text_area :description %>
     </div>
     <%= f.submit "Submit"%>
     <%= link_to "back", root_path %>
